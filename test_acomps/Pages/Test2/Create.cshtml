@@ -1,0 +1,39 @@
+﻿@page
+@model test_acomps.Pages.Test2.CreateModel
+
+@{
+    ViewData["Title"] = "Добавить";
+}
+
+<h1>Добавить</h1>
+
+<h4>Два связанных списка - целых числа, для по-узлового сложения</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Test2_model.Str1" class="control-label"></label>
+                <input asp-for="Test2_model.Str1" class="form-control" />
+                <span asp-validation-for="Test2_model.Str1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Test2_model.Str2" class="control-label"></label>
+                <input asp-for="Test2_model.Str2" class="form-control" />
+                <span asp-validation-for="Test2_model.Str2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Подтвердить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Вернуться к результатам</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

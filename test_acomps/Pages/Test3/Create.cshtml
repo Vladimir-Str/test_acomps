@@ -1,0 +1,34 @@
+﻿@page
+@model test_acomps.Pages.Test3.CreateModel
+
+@{
+    ViewData["Title"] = "Добавить";
+}
+
+<h1>Добавить</h1>
+
+<h4>Строку для проверки является ли она полиндромом</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Test3_model.Str" class="control-label"></label>
+                <input asp-for="Test3_model.Str" class="form-control" />
+                <span asp-validation-for="Test3_model.Str" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Подтвердить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Вернуться к результатам</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
